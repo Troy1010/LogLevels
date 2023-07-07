@@ -15,6 +15,6 @@ void InternalLog(std::string sString)
 
 bool ShouldLog(int modIndex, LogLevel::Enum logLevel)
 {
-    return g_LogLevelModMap.contains(modIndex) && g_LogLevelModMap[modIndex] >= logLevel
+    return (!g_LogLevelModMap.contains(modIndex) || g_LogLevelModMap[modIndex] >= logLevel)
         && g_LogLevel >= logLevel;
 }

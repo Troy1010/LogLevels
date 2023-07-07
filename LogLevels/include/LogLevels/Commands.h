@@ -27,3 +27,8 @@ extern CommandInfo(kCommandInfo_Logz);
 extern CommandInfo(kCommandInfo_Logd);
 extern CommandInfo(kCommandInfo_SetGlobalLogLevel);
 extern CommandInfo(kCommandInfo_SetModLogLevel);
+extern CommandInfo(kCommandInfo_Logi);
+extern CommandInfo(kCommandInfo_Loge);
+extern CommandInfo(kCommandInfo_Logw);
+extern CommandInfo(kCommandInfo_Logv);
+extern CommandInfo(kCommandInfo_Logf);

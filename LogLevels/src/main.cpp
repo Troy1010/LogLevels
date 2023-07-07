@@ -81,6 +81,11 @@ bool OBSEPlugin_Load(const OBSEInterface * obse)
 	obse->RegisterCommand(&kCommandInfo_Logd);
 	obse->RegisterCommand(&kCommandInfo_SetGlobalLogLevel);
 	obse->RegisterCommand(&kCommandInfo_SetModLogLevel);
+	obse->RegisterCommand(&kCommandInfo_Logi);
+	obse->RegisterCommand(&kCommandInfo_Loge);
+	obse->RegisterCommand(&kCommandInfo_Logw);
+	obse->RegisterCommand(&kCommandInfo_Logv);
+	obse->RegisterCommand(&kCommandInfo_Logf);
 
 	if (!obse->isEditor)
 	{
