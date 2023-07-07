@@ -45,8 +45,8 @@ bool Cmd_SetModLogLevel_Execute(COMMAND_ARGS)
 
 DEFINE_COMMAND_PLUGIN(SetModLogLevel, "Sets the log level for this mod", 0, 1, kParams_OneInt)
 
-// # SetLogLevel
-bool Cmd_SetLogLevel_Execute(COMMAND_ARGS)
+// # SetGlobalLogLevel
+bool Cmd_SetGlobalLogLevel_Execute(COMMAND_ARGS)
 {
     int data;
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
@@ -67,7 +67,7 @@ bool Cmd_SetLogLevel_Execute(COMMAND_ARGS)
     return true;
 }
 
-DEFINE_COMMAND_PLUGIN(SetLogLevel, "Sets the log level", 0, 1, kParams_OneInt)
+DEFINE_COMMAND_PLUGIN(SetGlobalLogLevel, "Sets the log level", 0, 1, kParams_OneInt)
 
 // # Logz
 bool Cmd_Logz_Execute(COMMAND_ARGS)

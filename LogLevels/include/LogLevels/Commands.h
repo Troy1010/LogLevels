@@ -25,5 +25,5 @@
 extern CommandInfo(kCommandInfo_PlaygroundLogLevels);
 extern CommandInfo(kCommandInfo_Logz);
 extern CommandInfo(kCommandInfo_Logd);
-extern CommandInfo(kCommandInfo_SetLogLevel);
+extern CommandInfo(kCommandInfo_SetGlobalLogLevel);
 extern CommandInfo(kCommandInfo_SetModLogLevel);

@@ -61,12 +61,12 @@ bool OBSEPlugin_Query(const OBSEInterface * obse, PluginInfo * info)
 		if (!(g_arrayIntfc = (OBSEArrayVarInterface*)obse->QueryInterface(kInterface_ArrayVar))) { _ERROR("Array interface not found"); return false; }
 	}
 	if (obse->obseVersion < OBSE_VERSION_INTEGER) { _MESSAGE("OBSE version too old (got %08X expected at least %08X)", obse->obseVersion, OBSE_VERSION_INTEGER); return false; }
-	Logd(std::string(__func__) + "`Close");
+	Logd(std::string(__func__) + "`Close")
 	return true;
 }
 bool OBSEPlugin_Load(const OBSEInterface * obse)
 {
-	Logd(std::string(__func__) + "`Open");
+	Logd(std::string(__func__) + "`Open")
 	g_pluginHandle = obse->GetPluginHandle();
 	if (!obse->isEditor)
 	{
@@ -79,7 +79,7 @@ bool OBSEPlugin_Load(const OBSEInterface * obse)
 	obse->RegisterCommand(&kCommandInfo_PlaygroundLogLevels);
 	obse->RegisterCommand(&kCommandInfo_Logz);
 	obse->RegisterCommand(&kCommandInfo_Logd);
-	obse->RegisterCommand(&kCommandInfo_SetLogLevel);
+	obse->RegisterCommand(&kCommandInfo_SetGlobalLogLevel);
 	obse->RegisterCommand(&kCommandInfo_SetModLogLevel);
 
 	if (!obse->isEditor)
@@ -89,7 +89,7 @@ bool OBSEPlugin_Load(const OBSEInterface * obse)
 		g_commandTableIntfc = (OBSECommandTableInterface*)obse->QueryInterface(kInterface_CommandTable);
 	}
 
-	Logd(std::string(__func__) + "`Close");
+	Logd(std::string(__func__) + "`Close")
 	return true;
 }
 };
