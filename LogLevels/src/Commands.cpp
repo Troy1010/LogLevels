@@ -20,6 +20,30 @@ bool Cmd_PlaygroundLogLevels_Execute(COMMAND_ARGS)
 
 DEFINE_COMMAND_PLUGIN(PlaygroundLogLevels, "Playground command", 0, 1, kParams_OneString)
 
+// # SetLogLevel
+bool Cmd_SetLogLevel_Execute(COMMAND_ARGS)
+{
+    int data;
+    if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
+    {
+        try
+        {
+            g_LogLevel = static_cast<LogLevel::Enum>(data);
+        }
+        catch (const std::exception& e)
+        {
+            InternalLog(std::string(__func__) + "Could not cast arg into LogLevel enum." + e.what());
+        }
+    }
+    else
+    {
+        InternalLog(std::string(__func__) + "Could not extract args.");
+    }
+    return true;
+}
+
+DEFINE_COMMAND_PLUGIN(SetLogLevel, "Sets the log level", 0, 1, kParams_OneInt)
+
 // # Logz
 bool Cmd_Logz_Execute(COMMAND_ARGS)
 {
