@@ -2,5 +2,5 @@
 #include "LogLevel.h"
 
 
-constexpr auto logLevel = LogLevel::INFO;
+inline auto g_LogLevel = LogLevel::INFO;
 constexpr auto DebugLogName = "LogLevels.log";

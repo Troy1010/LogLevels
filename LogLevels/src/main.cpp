@@ -75,8 +75,10 @@ bool OBSEPlugin_Load(const OBSEInterface * obse)
 		g_serialization->SetLoadCallback(g_pluginHandle, Handler_Load);
 		g_serialization->SetNewGameCallback(g_pluginHandle, Handler_NewGame);
 	}
-	obse->SetOpcodeBase(0x28B0);
+	obse->SetOpcodeBase(0x2900);
 	obse->RegisterCommand(&kCommandInfo_PlaygroundLogLevels);
+	obse->RegisterCommand(&kCommandInfo_Logz);
+	obse->RegisterCommand(&kCommandInfo_Logd);
 
 	if (!obse->isEditor)
 	{

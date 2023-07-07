@@ -23,3 +23,5 @@
 #include "Misc.h"
 
 extern CommandInfo(kCommandInfo_PlaygroundLogLevels);
+extern CommandInfo(kCommandInfo_Logz);
+extern CommandInfo(kCommandInfo_Logd);
