@@ -1,6 +1,6 @@
 #include "..\include\LogLevels\Commands.h"
 
-#include "Settings.h"
+#include "Globals.h"
 
 
 // # PlaygroundLogLevels
@@ -19,6 +19,31 @@ bool Cmd_PlaygroundLogLevels_Execute(COMMAND_ARGS)
 }
 
 DEFINE_COMMAND_PLUGIN(PlaygroundLogLevels, "Playground command", 0, 1, kParams_OneString)
+
+// # SetModLogLevel
+bool Cmd_SetModLogLevel_Execute(COMMAND_ARGS)
+{
+    int data;
+    if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
+    {
+        try
+        {
+            const auto logLevel = static_cast<LogLevel::Enum>(data);
+            g_LogLevelModMap[scriptObj->GetModIndex()] = logLevel;
+        }
+        catch (const std::exception& e)
+        {
+            InternalLog(std::string(__func__) + "Failure: " + e.what());
+        }
+    }
+    else
+    {
+        InternalLog(std::string(__func__) + "Could not extract args.");
+    }
+    return true;
+}
+
+DEFINE_COMMAND_PLUGIN(SetModLogLevel, "Sets the log level for this mod", 0, 1, kParams_OneInt)
 
 // # SetLogLevel
 bool Cmd_SetLogLevel_Execute(COMMAND_ARGS)
@@ -70,7 +95,7 @@ DEFINE_COMMAND_PLUGIN(Logz, "Playground command", 0, 1, kParams_OneString)
 // # Logd
 bool Cmd_Logd_Execute(COMMAND_ARGS)
 {
-    if (g_LogLevel < LogLevel::DEBUGZ)
+    if (!ShouldLog(scriptObj->GetModIndex(), LogLevel::DEBUGZ))
         return true;
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))

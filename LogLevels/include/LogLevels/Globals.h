@@ -19,6 +19,8 @@
 #include <sstream>
 #include <map>
 
+#include "LogLevel.h"
+
 #if OBLIVION
 extern OBSECommandTableInterface * g_commandTableIntfc; // assigned in OBSEPlugin_Load
 extern OBSEScriptInterface * g_scriptIntfc; //For command argument extraction
@@ -41,3 +43,6 @@ const _IsMenuMode IsMenuMode = (_IsMenuMode)0x00578F60;
 extern OBSEArrayVarInterface* g_arrayIntfc;
 typedef OBSEArrayVarInterface::Array	OBSEArray;
 typedef OBSEArrayVarInterface::Element	OBSEElement;
+
+inline auto g_LogLevel = LogLevel::FLOODING;
+inline std::map<int, int> g_LogLevelModMap;

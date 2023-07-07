@@ -17,7 +17,7 @@
     Flooding
         For messages that might write to the log every frame.
 
-I generally like to keep the log level at ERROR, and freely use logz while developing. Then, before release, delete or change all logz to whatever makes sense. That way, I can see very accommodating logs while developing.. and if I come back later, I can see those old logs by setting the log level to DEBUG or VERBOSE.. but otherwise, they're hidden.
+I generally like to keep the log level at WARNING, and freely use logz while developing. Then, before release, delete or change all logz to whatever makes sense. That way, I can see very accommodating logs while developing.. and if I come back later, I can see those old logs by setting the log level to DEBUG or VERBOSE.. but otherwise, they're hidden.
  */
 struct LogLevel
 {
