@@ -25,11 +25,31 @@
 #include "..\include\LogLevels\Commands.h"
 #include "TM_CommonCPP/String.h"
 
+inline void NewGameOrLoadGame()
+{
+	bOblivionLoaded = true; //Because there is no OblivionLoaded event, I think this is the closest I can get. (without using mod helper)
+}
+
+void Handler_NewGame(void * reserved)
+{
+	bOblivionLoaded = true; // for sanity, to see the following debug message.
+	Logd(std::string(__func__) + "`Open")
+	NewGameOrLoadGame();
+	Logd(std::string(__func__) + "`Close")
+}
+
+void Handler_Load(void * reserved)
+{
+	Logd(std::string(__func__) + "`Open")
+	NewGameOrLoadGame();
+	Logd(std::string(__func__) + "`Close")
+}
+
 #pragma region LoadCCHandler
 extern "C" {
 bool OBSEPlugin_Query(const OBSEInterface * obse, PluginInfo * info)
 {
-	Logd(std::string(__func__) + "`Open");
+	Logd(std::string(__func__) + "`Open")
 	info->infoVersion = PluginInfo::kInfoVersion;
 	info->name = "LogLevels";
 	info->version = 1;
@@ -52,6 +72,8 @@ bool OBSEPlugin_Load(const OBSEInterface * obse)
 	{
 		if (!(g_serialization = (OBSESerializationInterface *)obse->QueryInterface(kInterface_Serialization))) { _ERROR("serialization interface not found"); return false; }
 		if (g_serialization->version < OBSESerializationInterface::kVersion) { _ERROR("incorrect serialization version found (got %08X need %08X)", g_serialization->version, OBSESerializationInterface::kVersion); return false; }
+		g_serialization->SetLoadCallback(g_pluginHandle, Handler_Load);
+		g_serialization->SetNewGameCallback(g_pluginHandle, Handler_NewGame);
 	}
 	obse->SetOpcodeBase(0x28B0);
 	obse->RegisterCommand(&kCommandInfo_PlaygroundLogLevels);
