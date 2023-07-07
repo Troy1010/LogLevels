@@ -1,4 +1,6 @@
 #pragma once
+#include "LogLevel.h"
 
-constexpr auto LogLevel = 1;
+
+constexpr auto logLevel = LogLevel::INFO;
 constexpr auto DebugLogName = "LogLevels.log";

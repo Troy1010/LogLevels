@@ -168,6 +168,7 @@
     <ClInclude Include="include\LogLevels\Commands.h" />
     <ClInclude Include="include\LogLevels\Logging.h" />
     <ClInclude Include="include\LogLevels\Globals.h" />
+    <ClInclude Include="include\LogLevels\LogLevel.h" />
     <ClInclude Include="include\LogLevels\Misc.h" />
     <ClInclude Include="include\LogLevels\Settings.h" />
     <ClInclude Include="include\LogLevels\ToLogStrOverloads.h" />
