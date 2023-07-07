@@ -1,0 +1,4 @@
+[submodule "submodules/TM_CommonCPP"]
+	url = https://github.com/Troy1010/TM_CommonCPP.git
+[submodule "submodules/xOBSE"]
+	url = https://github.com/llde/xOBSE.git
