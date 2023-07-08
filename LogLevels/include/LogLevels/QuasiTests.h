@@ -6,7 +6,7 @@
 class QuasiTests
 {
 public:
-    void runTests()
+    static void runTests()
     {
         logz("QuasiTests.runTests()`Open")
         std::string testName = "Test 1";

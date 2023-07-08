@@ -31,8 +31,7 @@ inline void NewGameOrLoadGame()
 	bOblivionLoaded = true; //Because there is no OblivionLoaded event, I think this is the closest I can get. (without using mod helper)
 	if (shouldTest)
 	{
-		auto quasiTests = new QuasiTests();
-		quasiTests->runTests();
+		QuasiTests::runTests();
 	}
 }
 
