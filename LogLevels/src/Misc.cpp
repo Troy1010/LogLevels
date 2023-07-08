@@ -21,7 +21,7 @@
 #include <sstream>
 
 #include "Globals.h"
-#include "Settings.h"
+#include "..\include\LogLevels\Config.h"
 #include "..\include\LogLevels\Logging.h"
 
 const bool Contains(std::set<UInt32> cSet, UInt32 vItem)

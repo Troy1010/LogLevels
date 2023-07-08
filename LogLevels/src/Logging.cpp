@@ -1,7 +1,7 @@
 #include "..\include\LogLevels\Logging.h"
 
 #include "Globals.h"
-#include "Settings.h"
+#include "..\include\LogLevels\Config.h"
 #include "TM_CommonCPP/String.h"
 
 IDebugLog gLog(DebugLogName); //Log

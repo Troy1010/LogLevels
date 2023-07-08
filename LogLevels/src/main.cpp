@@ -19,7 +19,7 @@
 // #include "obse/Hooks_DirectInput8Create.h"
 #include <sstream>
 #include "..\include\LogLevels\Logging.h"
-#include "Settings.h"
+#include "..\include\LogLevels\Config.h"
 #include "Globals.h"
 #include "Misc.h"
 #include "QuasiTests.h"
