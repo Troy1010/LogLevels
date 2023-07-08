@@ -13,3 +13,4 @@ void InternalSetLogLevel(int modIndex, LogLevel::Enum logLevel);
 #define Logw(sTxt) if (g_LogLevelPluginLogLevel >= LogLevel::WARNING) {InternalLog(sTxt);};
 #define Logd(sTxt) if (g_LogLevelPluginLogLevel >= LogLevel::DEBUGZ) {InternalLog(sTxt);};
 #define Logv(sTxt) if (g_LogLevelPluginLogLevel >= LogLevel::VERBOSE) {InternalLog(sTxt);};
+#define Logf(sTxt) if (g_LogLevelPluginLogLevel >= LogLevel::FLOODING) {InternalLog(sTxt);};
