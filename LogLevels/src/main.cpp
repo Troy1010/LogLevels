@@ -22,12 +22,18 @@
 #include "Settings.h"
 #include "Globals.h"
 #include "Misc.h"
+#include "QuasiTests.h"
 #include "..\include\LogLevels\Commands.h"
 #include "TM_CommonCPP/String.h"
 
 inline void NewGameOrLoadGame()
 {
 	bOblivionLoaded = true; //Because there is no OblivionLoaded event, I think this is the closest I can get. (without using mod helper)
+	if (shouldTest)
+	{
+		auto quasiTests = new QuasiTests();
+		quasiTests->runTests();
+	}
 }
 
 void Handler_NewGame(void * reserved)

@@ -28,8 +28,9 @@ bool Cmd_SetModLogLevel_Execute(COMMAND_ARGS)
     {
         try
         {
-            const auto logLevel = static_cast<LogLevel::Enum>(data);
-            g_LogLevelModMap[scriptObj->GetModIndex()] = logLevel;
+            auto modIndex = scriptObj->GetModIndex();
+            auto logLevel = static_cast<LogLevel::Enum>(data);
+            InternalSetLogLevel(modIndex, logLevel);
         }
         catch (const std::exception& e)
         {
