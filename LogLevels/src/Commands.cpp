@@ -260,3 +260,28 @@ bool Cmd_LogLevelFlooding_Execute(COMMAND_ARGS)
 }
 
 DEFINE_COMMAND_PLUGIN(LogLevelFlooding, "Returns int value for LogLevel", 0, 0, nullptr)
+// # ShouldLog
+bool Cmd_ShouldLog_Execute(COMMAND_ARGS)
+{
+    int data;
+    if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
+    {
+        try
+        {
+            const auto logLevel = static_cast<LogLevel::Enum>(data);
+            *result = InternalShouldLog(scriptObj->GetModIndex(), logLevel);
+        }
+        catch (const std::exception& e)
+        {
+            InternalLog(std::string(__func__) + "Failure: " + e.what());
+        }
+    }
+    else
+    {
+        InternalLog(std::string(__func__) + "Could not extract args.");
+    }
+    
+    return true;
+}
+
+DEFINE_COMMAND_PLUGIN(ShouldLog, "True if should log, false otherwise", 0, 1, kParams_OneInt)

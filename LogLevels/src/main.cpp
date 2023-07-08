@@ -79,13 +79,13 @@ bool OBSEPlugin_Load(const OBSEInterface * obse)
 	obse->RegisterCommand(&kCommandInfo_PlaygroundLogLevels);
 	obse->RegisterCommand(&kCommandInfo_Logz);
 	obse->RegisterCommand(&kCommandInfo_Logd);
-	obse->RegisterCommand(&kCommandInfo_SetGlobalLogLevel);
-	obse->RegisterCommand(&kCommandInfo_SetModLogLevel);
 	obse->RegisterCommand(&kCommandInfo_Logi);
 	obse->RegisterCommand(&kCommandInfo_Loge);
 	obse->RegisterCommand(&kCommandInfo_Logw);
 	obse->RegisterCommand(&kCommandInfo_Logv);
 	obse->RegisterCommand(&kCommandInfo_Logf);
+	obse->RegisterCommand(&kCommandInfo_SetGlobalLogLevel);
+	obse->RegisterCommand(&kCommandInfo_SetModLogLevel);
 	obse->RegisterCommand(&kCommandInfo_LogLevelNone);
 	obse->RegisterCommand(&kCommandInfo_LogLevelTemporary);
 	obse->RegisterCommand(&kCommandInfo_LogLevelInfo);
@@ -94,6 +94,7 @@ bool OBSEPlugin_Load(const OBSEInterface * obse)
 	obse->RegisterCommand(&kCommandInfo_LogLevelDebug);
 	obse->RegisterCommand(&kCommandInfo_LogLevelVerbose);
 	obse->RegisterCommand(&kCommandInfo_LogLevelFlooding);
+	obse->RegisterCommand(&kCommandInfo_ShouldLog);
 
 	if (!obse->isEditor)
 	{
