@@ -13,7 +13,7 @@ void InternalLog(std::string sString)
     _MESSAGE(TMC::Str::Replace(sString, "%", "").c_str());
 }
 
-bool ShouldLog(int modIndex, LogLevel::Enum logLevel)
+bool InternalShouldLog(int modIndex, LogLevel::Enum logLevel)
 {
     return (!g_LogLevelModMap.contains(modIndex) || g_LogLevelModMap[modIndex] >= logLevel)
         && g_LogLevel >= logLevel;

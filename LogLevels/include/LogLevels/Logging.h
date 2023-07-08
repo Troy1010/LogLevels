@@ -4,7 +4,7 @@
 
 extern IDebugLog gLog; //Log
 void InternalLog(std::string sString);
-bool ShouldLog(int modIndex, LogLevel::Enum logLevel);
+bool InternalShouldLog(int modIndex, LogLevel::Enum logLevel);
 #define DebugCC(iLvl,sTxt) if (g_LogLevel >= (iLvl)) {InternalLog(sTxt);};
 #define logz(sTxt) if (g_LogLevel >= -1) {InternalLog(sTxt);};
 #define Logi(sTxt) if (g_LogLevel >= 1) {InternalLog(sTxt);};

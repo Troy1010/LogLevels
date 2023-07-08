@@ -72,7 +72,7 @@ DEFINE_COMMAND_PLUGIN(SetGlobalLogLevel, "Sets a log level cap for all mods", 0,
 // # Logz
 bool Cmd_Logz_Execute(COMMAND_ARGS)
 {
-    if (!ShouldLog(scriptObj->GetModIndex(), LogLevel::TEMPORARY))
+    if (!InternalShouldLog(scriptObj->GetModIndex(), LogLevel::TEMPORARY))
         return true;
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
@@ -91,7 +91,7 @@ DEFINE_COMMAND_PLUGIN(Logz, "Log if log level is <= LogLevel::TEMPORARY", 0, 1, 
 // # Logi
 bool Cmd_Logi_Execute(COMMAND_ARGS)
 {
-    if (!ShouldLog(scriptObj->GetModIndex(), LogLevel::INFO))
+    if (!InternalShouldLog(scriptObj->GetModIndex(), LogLevel::INFO))
         return true;
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
@@ -109,7 +109,7 @@ DEFINE_COMMAND_PLUGIN(Logi, "Log if log level is <= LogLevel::INFO", 0, 1, kPara
 // # Loge
 bool Cmd_Loge_Execute(COMMAND_ARGS)
 {
-    if (!ShouldLog(scriptObj->GetModIndex(), LogLevel::ERRORZ))
+    if (!InternalShouldLog(scriptObj->GetModIndex(), LogLevel::ERRORZ))
         return true;
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
@@ -127,7 +127,7 @@ DEFINE_COMMAND_PLUGIN(Loge, "Log if log level is <= LogLevel::ERRORZ", 0, 1, kPa
 // # Logw
 bool Cmd_Logw_Execute(COMMAND_ARGS)
 {
-    if (!ShouldLog(scriptObj->GetModIndex(), LogLevel::WARNING))
+    if (!InternalShouldLog(scriptObj->GetModIndex(), LogLevel::WARNING))
         return true;
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
@@ -145,7 +145,7 @@ DEFINE_COMMAND_PLUGIN(Logw, "Log if log level is <= LogLevel::WARNING", 0, 1, kP
 // # Logd
 bool Cmd_Logd_Execute(COMMAND_ARGS)
 {
-    if (!ShouldLog(scriptObj->GetModIndex(), LogLevel::DEBUGZ))
+    if (!InternalShouldLog(scriptObj->GetModIndex(), LogLevel::DEBUGZ))
         return true;
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
@@ -163,7 +163,7 @@ DEFINE_COMMAND_PLUGIN(Logd, "Log if log level is <= LogLevel::DEBUGZ", 0, 1, kPa
 // # Logv
 bool Cmd_Logv_Execute(COMMAND_ARGS)
 {
-    if (!ShouldLog(scriptObj->GetModIndex(), LogLevel::VERBOSE))
+    if (!InternalShouldLog(scriptObj->GetModIndex(), LogLevel::VERBOSE))
         return true;
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
@@ -181,7 +181,7 @@ DEFINE_COMMAND_PLUGIN(Logv, "Log if log level is <= LogLevel::VERBOSE", 0, 1, kP
 // # Logf
 bool Cmd_Logf_Execute(COMMAND_ARGS)
 {
-    if (!ShouldLog(scriptObj->GetModIndex(), LogLevel::FLOODING))
+    if (!InternalShouldLog(scriptObj->GetModIndex(), LogLevel::FLOODING))
         return true;
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
