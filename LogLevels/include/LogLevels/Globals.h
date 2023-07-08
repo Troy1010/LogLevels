@@ -44,5 +44,5 @@ extern OBSEArrayVarInterface* g_arrayIntfc;
 typedef OBSEArrayVarInterface::Array	OBSEArray;
 typedef OBSEArrayVarInterface::Element	OBSEElement;
 
-inline auto g_LogLevel = static_cast<int>(LogLevel::FLOODING);
-inline std::map<int, int> g_LogLevelModMap;
+inline auto g_LogLevel = LogLevel::FLOODING;
+inline std::map<int, LogLevel::Enum> g_LogLevelModMap;
