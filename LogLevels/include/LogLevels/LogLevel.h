@@ -2,7 +2,7 @@
 
 /**
 * These are my favorite logging levels:
-    logz
+    Temporary
         Easy, temporary, local debugging. Should not be merged into releases.
     Info
         Important milestones that are always good to see, like user clicks, initialization complete, etc. Use sparingly.
@@ -23,8 +23,8 @@ struct LogLevel
 {
     enum Enum
     {
-        ALWAYS,
         NONE,
+        TEMPORARY,
         INFO,
         // Ends with "Z" because otherwise it's seen as the ERROR macro
         ERRORZ,

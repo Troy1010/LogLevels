@@ -72,7 +72,7 @@ DEFINE_COMMAND_PLUGIN(SetGlobalLogLevel, "Sets a log level cap for all mods", 0,
 // # Logz
 bool Cmd_Logz_Execute(COMMAND_ARGS)
 {
-    if (!ShouldLog(scriptObj->GetModIndex(), LogLevel::ALWAYS))
+    if (!ShouldLog(scriptObj->GetModIndex(), LogLevel::TEMPORARY))
         return true;
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
@@ -86,7 +86,7 @@ bool Cmd_Logz_Execute(COMMAND_ARGS)
     return true;
 }
 
-DEFINE_COMMAND_PLUGIN(Logz, "Log if log level is <= LogLevel::ALWAYS", 0, 1, kParams_OneString)
+DEFINE_COMMAND_PLUGIN(Logz, "Log if log level is <= LogLevel::TEMPORARY", 0, 1, kParams_OneString)
 
 // # Logi
 bool Cmd_Logi_Execute(COMMAND_ARGS)
@@ -196,6 +196,22 @@ bool Cmd_Logf_Execute(COMMAND_ARGS)
 }
 
 DEFINE_COMMAND_PLUGIN(Logf, "Log if log level is <= LogLevel::FLOODING", 0, 1, kParams_OneString)
+// # LogLevelNone
+bool Cmd_LogLevelNone_Execute(COMMAND_ARGS)
+{
+    *result = static_cast<int>(LogLevel::NONE);
+    return true;
+}
+
+DEFINE_COMMAND_PLUGIN(LogLevelNone, "Returns int value for LogLevel", 0, 0, nullptr)
+// # LogLevelTemporary
+bool Cmd_LogLevelTemporary_Execute(COMMAND_ARGS)
+{
+    *result = static_cast<int>(LogLevel::TEMPORARY);
+    return true;
+}
+
+DEFINE_COMMAND_PLUGIN(LogLevelTemporary, "Returns int value for LogLevel", 0, 0, nullptr)
 // # LogLevelInfo
 bool Cmd_LogLevelInfo_Execute(COMMAND_ARGS)
 {
@@ -203,4 +219,44 @@ bool Cmd_LogLevelInfo_Execute(COMMAND_ARGS)
     return true;
 }
 
-DEFINE_COMMAND_PLUGIN(LogLevelInfo, "Returns int value for LogLevelInfo", 0, 0, nullptr)
+DEFINE_COMMAND_PLUGIN(LogLevelInfo, "Returns int value for LogLevel", 0, 0, nullptr)
+// # LogLevelError
+bool Cmd_LogLevelError_Execute(COMMAND_ARGS)
+{
+    *result = static_cast<int>(LogLevel::ERRORZ);
+    return true;
+}
+
+DEFINE_COMMAND_PLUGIN(LogLevelError, "Returns int value for LogLevel", 0, 0, nullptr)
+// # LogLevelError
+bool Cmd_LogLevelWarning_Execute(COMMAND_ARGS)
+{
+    *result = static_cast<int>(LogLevel::WARNING);
+    return true;
+}
+
+DEFINE_COMMAND_PLUGIN(LogLevelWarning, "Returns int value for LogLevel", 0, 0, nullptr)
+// # LogLevelDebug
+bool Cmd_LogLevelDebug_Execute(COMMAND_ARGS)
+{
+    *result = static_cast<int>(LogLevel::DEBUGZ);
+    return true;
+}
+
+DEFINE_COMMAND_PLUGIN(LogLevelDebug, "Returns int value for LogLevel", 0, 0, nullptr)
+// # LogLevelVerbose
+bool Cmd_LogLevelVerbose_Execute(COMMAND_ARGS)
+{
+    *result = static_cast<int>(LogLevel::VERBOSE);
+    return true;
+}
+
+DEFINE_COMMAND_PLUGIN(LogLevelVerbose, "Returns int value for LogLevel", 0, 0, nullptr)
+// # LogLevelFlooding
+bool Cmd_LogLevelFlooding_Execute(COMMAND_ARGS)
+{
+    *result = static_cast<int>(LogLevel::FLOODING);
+    return true;
+}
+
+DEFINE_COMMAND_PLUGIN(LogLevelFlooding, "Returns int value for LogLevel", 0, 0, nullptr)
