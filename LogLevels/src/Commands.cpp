@@ -196,3 +196,11 @@ bool Cmd_Logf_Execute(COMMAND_ARGS)
 }
 
 DEFINE_COMMAND_PLUGIN(Logf, "Log if log level is <= LogLevel::FLOODING", 0, 1, kParams_OneString)
+// # LogLevelInfo
+bool Cmd_LogLevelInfo_Execute(COMMAND_ARGS)
+{
+    *result = static_cast<int>(LogLevel::INFO);
+    return true;
+}
+
+DEFINE_COMMAND_PLUGIN(LogLevelInfo, "Returns int value for LogLevelInfo", 0, 0, nullptr)

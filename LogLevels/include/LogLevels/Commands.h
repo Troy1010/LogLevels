@@ -32,3 +32,4 @@ extern CommandInfo(kCommandInfo_Loge);
 extern CommandInfo(kCommandInfo_Logw);
 extern CommandInfo(kCommandInfo_Logv);
 extern CommandInfo(kCommandInfo_Logf);
+extern CommandInfo(kCommandInfo_LogLevelInfo);
