@@ -24,6 +24,20 @@
 #include "..\include\LogLevels\Config.h"
 #include "..\include\LogLevels\Logging.h"
 
+std::string ToHexString(UInt32 value)
+{
+	std::stringstream ss;
+	ss << std::hex << value;  // Convert to hexadecimal
+
+	std::string hexString = ss.str();
+
+	// If the value is less than 0x10000000, prepend zeros to the string
+	while (hexString.length() < 8)
+		hexString = "0" + hexString;
+
+	return hexString;
+}
+
 const bool Contains(std::set<UInt32> cSet, UInt32 vItem)
 {
 	return cSet.find(vItem) != cSet.end();

@@ -20,6 +20,7 @@
 // #include "obse/Hooks_DirectInput8Create.h"
 #include <sstream>
 
+std::string ToHexString(UInt32 value);
 const bool Contains(std::set<UInt32> cSet, UInt32 vItem);
 const bool Contains(std::set<UInt8> cSet, UInt8 vItem);
 void SafeConsolePrint(std::string sString);

@@ -78,7 +78,7 @@ bool Cmd_Logz_Execute(COMMAND_ARGS)
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
     {
-        InternalLog(data);
+        InternalLog(ToHexString(scriptObj->refID) + "`" + data);
     }
     else
     {
@@ -97,7 +97,7 @@ bool Cmd_Logi_Execute(COMMAND_ARGS)
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
     {
-        InternalLog(data);
+        InternalLog(ToHexString(scriptObj->refID) + "`" + data);
     }
     else
     {
@@ -115,7 +115,7 @@ bool Cmd_Loge_Execute(COMMAND_ARGS)
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
     {
-        InternalLog(data);
+        InternalLog(ToHexString(scriptObj->refID) + "`" + data);
     }
     else
     {
@@ -133,7 +133,7 @@ bool Cmd_Logw_Execute(COMMAND_ARGS)
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
     {
-        InternalLog(data);
+        InternalLog(ToHexString(scriptObj->refID) + "`" + data);
     }
     else
     {
@@ -151,7 +151,7 @@ bool Cmd_Logd_Execute(COMMAND_ARGS)
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
     {
-        InternalLog(data);
+        InternalLog(ToHexString(scriptObj->refID) + "`" + data);
     }
     else
     {
@@ -169,7 +169,7 @@ bool Cmd_Logv_Execute(COMMAND_ARGS)
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
     {
-        InternalLog(data);
+        InternalLog(ToHexString(scriptObj->refID) + "`" + data);
     }
     else
     {
@@ -187,7 +187,7 @@ bool Cmd_Logf_Execute(COMMAND_ARGS)
     char data[512];
     if (ExtractArgs(PASS_EXTRACT_ARGS, &data))
     {
-        InternalLog(data);
+        InternalLog(ToHexString(scriptObj->refID) + "`" + data);
     }
     else
     {
