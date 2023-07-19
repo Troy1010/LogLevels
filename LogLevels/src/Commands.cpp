@@ -204,7 +204,7 @@ bool Cmd_LogLevelNone_Execute(COMMAND_ARGS)
     return true;
 }
 
-DEFINE_COMMAND_PLUGIN(LogLevelNone, "Returns int value for LogLevel", 0, 0, nullptr)
+DEFINE_COMMAND_PLUGIN(LogLevelNone, "Returns int value for LogLevelNone:0", 0, 0, nullptr)
 // # LogLevelTemporary
 bool Cmd_LogLevelTemporary_Execute(COMMAND_ARGS)
 {
@@ -212,7 +212,7 @@ bool Cmd_LogLevelTemporary_Execute(COMMAND_ARGS)
     return true;
 }
 
-DEFINE_COMMAND_PLUGIN(LogLevelTemporary, "Returns int value for LogLevel", 0, 0, nullptr)
+DEFINE_COMMAND_PLUGIN(LogLevelTemporary, "Returns int value for LogLevelTemporary:1", 0, 0, nullptr)
 // # LogLevelInfo
 bool Cmd_LogLevelInfo_Execute(COMMAND_ARGS)
 {
@@ -220,7 +220,7 @@ bool Cmd_LogLevelInfo_Execute(COMMAND_ARGS)
     return true;
 }
 
-DEFINE_COMMAND_PLUGIN(LogLevelInfo, "Returns int value for LogLevel", 0, 0, nullptr)
+DEFINE_COMMAND_PLUGIN(LogLevelInfo, "Returns int value for LogLevelInfo:2", 0, 0, nullptr)
 // # LogLevelError
 bool Cmd_LogLevelError_Execute(COMMAND_ARGS)
 {
@@ -228,7 +228,7 @@ bool Cmd_LogLevelError_Execute(COMMAND_ARGS)
     return true;
 }
 
-DEFINE_COMMAND_PLUGIN(LogLevelError, "Returns int value for LogLevel", 0, 0, nullptr)
+DEFINE_COMMAND_PLUGIN(LogLevelError, "Returns int value for LogLevelError:3", 0, 0, nullptr)
 // # LogLevelError
 bool Cmd_LogLevelWarning_Execute(COMMAND_ARGS)
 {
@@ -236,7 +236,7 @@ bool Cmd_LogLevelWarning_Execute(COMMAND_ARGS)
     return true;
 }
 
-DEFINE_COMMAND_PLUGIN(LogLevelWarning, "Returns int value for LogLevel", 0, 0, nullptr)
+DEFINE_COMMAND_PLUGIN(LogLevelWarning, "Returns int value for LogLevelWarning:4", 0, 0, nullptr)
 // # LogLevelDebug
 bool Cmd_LogLevelDebug_Execute(COMMAND_ARGS)
 {
@@ -244,7 +244,7 @@ bool Cmd_LogLevelDebug_Execute(COMMAND_ARGS)
     return true;
 }
 
-DEFINE_COMMAND_PLUGIN(LogLevelDebug, "Returns int value for LogLevel", 0, 0, nullptr)
+DEFINE_COMMAND_PLUGIN(LogLevelDebug, "Returns int value for LogLevelDebug:5", 0, 0, nullptr)
 // # LogLevelVerbose
 bool Cmd_LogLevelVerbose_Execute(COMMAND_ARGS)
 {
@@ -252,7 +252,7 @@ bool Cmd_LogLevelVerbose_Execute(COMMAND_ARGS)
     return true;
 }
 
-DEFINE_COMMAND_PLUGIN(LogLevelVerbose, "Returns int value for LogLevel", 0, 0, nullptr)
+DEFINE_COMMAND_PLUGIN(LogLevelVerbose, "Returns int value for LogLevelVerbose:6", 0, 0, nullptr)
 // # LogLevelFlooding
 bool Cmd_LogLevelFlooding_Execute(COMMAND_ARGS)
 {
@@ -260,7 +260,7 @@ bool Cmd_LogLevelFlooding_Execute(COMMAND_ARGS)
     return true;
 }
 
-DEFINE_COMMAND_PLUGIN(LogLevelFlooding, "Returns int value for LogLevel", 0, 0, nullptr)
+DEFINE_COMMAND_PLUGIN(LogLevelFlooding, "Returns int value for LogLevelFlooding:7", 0, 0, nullptr)
 // # ShouldLog
 bool Cmd_ShouldLog_Execute(COMMAND_ARGS)
 {
